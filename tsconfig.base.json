@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ng-thermal-print": [
-        "dist/ng-thermal-print"
+      "ngx-thermal-print": [
+        "dist/ngx-thermal-print"
       ],
-      "ng-thermal-print/*": [
-        "dist/ng-thermal-print/*"
+      "ngx-thermal-print/*": [
+        "dist/ngx-thermal-print/*"
       ]
     }
   }

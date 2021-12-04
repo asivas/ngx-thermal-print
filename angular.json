@@ -127,39 +127,39 @@
         }
       }
     },
-    "ng-thermal-print": {
-      "root": "projects/ng-thermal-print",
-      "sourceRoot": "projects/ng-thermal-print/src",
+    "ngx-thermal-print": {
+      "root": "projects/ngx-thermal-print",
+      "sourceRoot": "projects/ngx-thermal-print/src",
       "projectType": "library",
       "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-thermal-print/tsconfig.lib.json",
-            "project": "projects/ng-thermal-print/ng-package.json"
+            "tsConfig": "projects/ngx-thermal-print/tsconfig.lib.json",
+            "project": "projects/ngx-thermal-print/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ng-thermal-print/ng-package.prod.json"
-            ,              "tsConfig": "projects/ng-thermal-print/tsconfig.lib.prod.json"
+              "project": "projects/ngx-thermal-print/ng-package.prod.json"
+            ,              "tsConfig": "projects/ngx-thermal-print/tsconfig.lib.prod.json"
 }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-thermal-print/src/test.ts",
-            "tsConfig": "projects/ng-thermal-print/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-thermal-print/karma.conf.js"
+            "main": "projects/ngx-thermal-print/src/test.ts",
+            "tsConfig": "projects/ngx-thermal-print/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-thermal-print/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-thermal-print/tsconfig.lib.json",
-              "projects/ng-thermal-print/tsconfig.spec.json"
+              "projects/ngx-thermal-print/tsconfig.lib.json",
+              "projects/ngx-thermal-print/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

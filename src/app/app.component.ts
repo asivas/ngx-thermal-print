@@ -4,9 +4,9 @@
  * @Last Modified by:   Zhenxiang Chen
  * @Last Modified time: 2021-12-04 17:05:00
  */
-import { PrintService, UsbDriver, BluetoothDriver } from "ng-thermal-print";
+import { PrintService, UsbDriver, BluetoothDriver } from "ngx-thermal-print";
 import { Component } from "@angular/core";
-import { PrintDriver } from "ng-thermal-print/lib/drivers/PrintDriver";
+import { PrintDriver } from "ngx-thermal-print/lib/drivers/PrintDriver";
 
 @Component({
   selector: "app-root",

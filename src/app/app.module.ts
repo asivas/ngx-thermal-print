@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ThermalPrintModule } from 'ng-thermal-print';
+import { ThermalPrintModule } from 'ngx-thermal-print';
 import { AppComponent } from './app.component';
 
 @NgModule({

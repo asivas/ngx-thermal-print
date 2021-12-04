@@ -17,10 +17,10 @@
       "path": "./e2e/tsconfig.e2e.json"
     },
     {
-      "path": "./projects/ng-thermal-print/tsconfig.lib.json"
+      "path": "./projects/ngx-thermal-print/tsconfig.lib.json"
     },
     {
-      "path": "./projects/ng-thermal-print/tsconfig.spec.json"
+      "path": "./projects/ngx-thermal-print/tsconfig.spec.json"
     }
   ]
 }
