@@ -1,4 +1,10 @@
-import { PrintService, UsbDriver, WebPrintDriver } from "ng-thermal-print";
+/**
+ * @Author: Zhenxiang Chen
+ * @Date:   2021-12-04 14:41:53
+ * @Last Modified by:   Zhenxiang Chen
+ * @Last Modified time: 2021-12-04 17:05:00
+ */
+import { PrintService, UsbDriver, BluetoothDriver } from "ng-thermal-print";
 import { Component } from "@angular/core";
 import { PrintDriver } from "ng-thermal-print/lib/drivers/PrintDriver";
 
@@ -10,11 +16,12 @@ import { PrintDriver } from "ng-thermal-print/lib/drivers/PrintDriver";
 export class AppComponent {
   status: boolean = false;
   usbPrintDriver: UsbDriver;
-  webPrintDriver: WebPrintDriver;
+  bluetoothDriver: BluetoothDriver;
   ip: string = "10.83.118.160";
 
   constructor(private printService: PrintService) {
     this.usbPrintDriver = new UsbDriver();
+    this.bluetoothDriver = new BluetoothDriver();
 
     this.printService.isConnected.subscribe((result) => {
       this.status = result;
@@ -37,9 +44,15 @@ export class AppComponent {
     );
   }
 
-  connectToWebPrint() {
-    this.webPrintDriver = new WebPrintDriver(this.ip);
-    this.printService.setDriver(this.webPrintDriver, "WebPRNT");
+  requestBluetooth() {
+    this.bluetoothDriver.requestBluetooth().subscribe(
+      (result) => {
+        this.printService.setDriver(this.bluetoothDriver);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   print() {

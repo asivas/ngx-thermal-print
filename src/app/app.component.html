@@ -1,11 +1,16 @@
+<!-- 
+  @Author: Zhenxiang Chen
+  @Date:   2021-12-04 14:41:53
+  @Last Modified by:   Zhenxiang Chen
+  @Last Modified time: 2021-12-04 14:58:59
+-->
 <strong>Status: {{status}}</strong>
 <div>
-  <input [(ngModel)]="ip" type="text" name="ip" placeholder="IP of printer with WebPRNT">
-  <button (click)="connectToWebPrint()">Connect to WebPRNT</button>
+  <button (click)="requestUsb()">Connect to USB</button>
 </div>
 
 <div>
-  <button (click)="requestUsb()">Connect to USB</button>
+  <button (click)="requestBluetooth()">Connect to Bluetooth</button>
 </div>
 
 

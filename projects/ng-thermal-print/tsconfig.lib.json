@@ -11,7 +11,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "types": ["w3c-web-usb"],
+    "types": ["w3c-web-usb", "web-bluetooth"],
     "lib": ["dom", "es2015"]
   },
   "angularCompilerOptions": {
