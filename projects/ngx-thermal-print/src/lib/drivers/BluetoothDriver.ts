@@ -2,7 +2,7 @@
  * @Author: Zhenxiang Chen
  * @Date:   2021-12-04 14:52:35
  * @Last Modified by:   Zhenxiang Chen
- * @Last Modified time: 2021-12-05 20:33:15
+ * @Last Modified time: 2021-12-05 22:20:02
  */
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PrintDriver } from "./PrintDriver";
@@ -57,7 +57,7 @@ export class BluetoothDriver extends PrintDriver {
     }
 
     public async write(data: Uint8Array): Promise<void> {
-        return this.printCharacteristic?.writeValue(data)
+        return this.printCharacteristic?.writeValueWithResponse(data)
     }
 
     public get isSupported(): boolean {
