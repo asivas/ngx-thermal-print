@@ -1,3 +1,9 @@
+/**
+ * @Author: Zhenxiang Chen
+ * @Date:   2021-12-04 14:41:53
+ * @Last Modified by:   Zhenxiang Chen
+ * @Last Modified time: 2021-12-05 20:34:46
+ */
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PrintDriver } from "./PrintDriver";
 declare var navigator: any;
@@ -60,6 +66,10 @@ export class UsbDriver extends PrintDriver {
 
     public async write(data: Uint8Array): Promise<void> {
         this.device.transferOut(this.endPoint.endpointNumber, data);
+    }
+
+    public get isSupported(): boolean {
+        return navigator.usb !== undefined && navigator.usb != null;
     }
 
     private listenForUsbConnections(): void {
