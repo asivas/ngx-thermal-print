@@ -2,11 +2,12 @@
  * @Author: Zhenxiang Chen
  * @Date:   2021-12-04 14:52:35
  * @Last Modified by:   Zhenxiang Chen
- * @Last Modified time: 2021-12-05 22:20:02
+ * @Last Modified time: 2021-12-06 19:26:44
  */
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PrintDriver } from "./PrintDriver";
-declare var navigator: any;
+declare const navigator: any;
+declare const BluetoothRemoteGATTCharacteristic: any;
 
 export class BluetoothDriver extends PrintDriver {
 
@@ -61,6 +62,6 @@ export class BluetoothDriver extends PrintDriver {
     }
 
     public get isSupported(): boolean {
-        return navigator.bluetooth !== undefined && navigator.bluetooth != null;
+        return !!(navigator.bluetooth && BluetoothRemoteGATTCharacteristic.prototype.writeValueWithResponse);
     }
 }

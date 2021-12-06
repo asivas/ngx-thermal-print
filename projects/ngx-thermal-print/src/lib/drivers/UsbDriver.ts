@@ -2,11 +2,11 @@
  * @Author: Zhenxiang Chen
  * @Date:   2021-12-04 14:41:53
  * @Last Modified by:   Zhenxiang Chen
- * @Last Modified time: 2021-12-05 20:34:46
+ * @Last Modified time: 2021-12-06 19:26:08
  */
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PrintDriver } from "./PrintDriver";
-declare var navigator: any;
+declare const navigator: any;
 
 export class UsbDriver extends PrintDriver {
     private device: USBDevice;
@@ -69,7 +69,7 @@ export class UsbDriver extends PrintDriver {
     }
 
     public get isSupported(): boolean {
-        return navigator.usb !== undefined && navigator.usb != null;
+        return !!(navigator.usb);
     }
 
     private listenForUsbConnections(): void {
