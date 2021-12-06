@@ -1,6 +1,6 @@
 {
   "name": "ngx-thermal-print",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An angular module to add thermal printing capabilities.",
   "keywords": [
     "Angular",
