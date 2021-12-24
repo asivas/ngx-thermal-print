@@ -2,7 +2,7 @@
  * @Author: Zhenxiang Chen
  * @Date:   2021-12-04 14:52:35
  * @Last Modified by:   Zhenxiang Chen
- * @Last Modified time: 2021-12-06 19:26:44
+ * @Last Modified time: 2021-12-26 18:16:58
  */
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PrintDriver } from "./PrintDriver";
@@ -58,10 +58,25 @@ export class BluetoothDriver extends PrintDriver {
     }
 
     public async write(data: Uint8Array): Promise<void> {
-        return this.printCharacteristic?.writeValueWithResponse(data)
+        if (this.printCharacteristic) {
+            // writeValueWithResponse allows max 512 for operation, so we have to split the data
+            const chunks = this.sliceIntoChunks(data, 512)
+            for (const chunk of chunks) {
+                await this.printCharacteristic.writeValueWithResponse(chunk)
+            }
+        }
     }
 
     public get isSupported(): boolean {
         return !!(navigator.bluetooth && BluetoothRemoteGATTCharacteristic.prototype.writeValueWithResponse);
+    }
+
+    private sliceIntoChunks(arr: Uint8Array, chunkSize: number): Uint8Array[] {
+        const res = [];
+        for (let i = 0; i < arr.length; i += chunkSize) {
+            const chunk = arr.slice(i, i + chunkSize);
+            res.push(chunk);
+        }
+        return res;
     }
 }
