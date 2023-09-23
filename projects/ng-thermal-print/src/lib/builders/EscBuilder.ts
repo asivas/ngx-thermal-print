@@ -4,6 +4,7 @@ declare var TextEncoder: any;
 
 const ESC = 0x1b;
 const GS = 0x1D;
+const FS = 0x1C;
 
 export class EscBuilder extends PrintBuilder {
     private encoder = new TextEncoder();
@@ -55,6 +56,14 @@ export class EscBuilder extends PrintBuilder {
         this.write(ESC);
         this.write("-");
         this.write(value ? 1 : 0);
+        return this;
+    }
+
+    writeLogo(logoNumber:number = 1): EscBuilder {
+        this.write(FS);
+        this.write("y");
+        this.write(logoNumber)
+        this.write(0)
         return this;
     }
 

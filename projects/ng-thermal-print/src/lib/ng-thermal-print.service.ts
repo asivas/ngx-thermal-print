@@ -123,6 +123,11 @@ export class PrintService extends PrintBuilder {
     return this;
   }
 
+  writeLogo(number:number = 1): PrintService {
+    this.builder.writeLogo(number);
+    return this;
+  }
+
   /**
    * write the current builder value to the driver and clear out the builder
    */

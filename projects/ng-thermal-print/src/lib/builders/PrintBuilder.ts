@@ -21,4 +21,6 @@ export abstract class PrintBuilder {
     public abstract setSize(value: string);
     public abstract setUnderline(value: boolean);
     public abstract writeLine(text: string);
+
+    public abstract writeLogo(logoNumber: number);
 }
