@@ -1,5 +1,9 @@
-import { StarPrintBuilder } from './builders/StarPrintBuilder';
-import { WebPrintBuilder } from './builders/WebPrintBuilder';
+/**
+ * @Author: Zhenxiang Chen
+ * @Date:   2021-11-24 22:01:46
+ * @Last Modified by:   Zhenxiang Chen
+ * @Last Modified time: 2021-12-04 14:21:32
+ */
 import { PrintBuilder } from './builders/PrintBuilder';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -45,12 +49,6 @@ export class PrintService extends PrintBuilder {
     }
 
     switch (this.printLanguage) {
-      case 'WebPRNT':
-        this.builder = new WebPrintBuilder();
-        break;
-      case 'StarPRNT':
-        this.builder = new StarPrintBuilder();
-        break;
       default:
         this.builder = new EscBuilder();
         break;

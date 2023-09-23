@@ -1,6 +1,6 @@
 {
-  "name": "ng-thermal-print",
-  "version": "1.0.1",
+  "name": "ngx-thermal-print",
+  "version": "1.0.3",
   "description": "An angular module to add thermal printing capabilities.",
   "keywords": [
     "Angular",
@@ -10,11 +10,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bebo925/ng-thermal-print"
+    "url": "https://github.com/Lucchetto/ngx-thermal-print"
   },
   "peerDependencies": {
-    "@angular/common": "^8.0.0-rc.0 || ^8.0.0",
-    "@angular/core": "^8.0.0-rc.0 || ^8.0.0"
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"

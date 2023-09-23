@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-lib": "ng build ng-thermal-print --prod",
+    "build-lib": "ng build ngx-thermal-print --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -36,6 +36,7 @@
     "@types/node": "^12.11.1",
     "@types/text-encoding": "0.0.35",
     "@types/w3c-web-usb": "^1.0.3",
+    "@types/web-bluetooth": "^0.0.11",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",

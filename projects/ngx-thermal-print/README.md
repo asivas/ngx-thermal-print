@@ -21,13 +21,13 @@ A library for connecting Angular apps with thermal printers.
 
 Install library
 
-`npm install ng-thermal-print`
+`npm install ngx-thermal-print`
 
 Import into your application
 
     import { BrowserModule } from '@angular/platform-browser';
     import { NgModule } from '@angular/core';
-    import { ThermalPrintModule } from 'ng-thermal-print'; //add this line
+    import { ThermalPrintModule } from 'ngx-thermal-print'; //add this line
     import { AppComponent } from './app.component';
 
     @NgModule({
@@ -47,9 +47,9 @@ Import into your application
 
 app.component.ts
 
-    import { PrintService, UsbDriver, WebPrintDriver } from 'ng-thermal-print';
+    import { PrintService, UsbDriver, WebPrintDriver } from 'ngx-thermal-print';
     import { Component } from '@angular/core';
-    import { PrintDriver } from 'ng-thermal-print/lib/drivers/PrintDriver';
+    import { PrintDriver } from 'ngx-thermal-print/lib/drivers/PrintDriver';
 
     @Component({
         selector: 'app-root',
