@@ -121,8 +121,8 @@ export class PrintService extends PrintBuilder {
     return this;
   }
 
-  writeLogo(number:number = 1): PrintService {
-    this.builder.writeLogo(number);
+  writeLogo(kc1:number = 32,kc2:number = 32): PrintService {
+    this.builder.writeLogo(kc1, kc2);
     return this;
   }
 

@@ -59,11 +59,18 @@ export class EscBuilder extends PrintBuilder {
         return this;
     }
 
-    writeLogo(logoNumber:number = 1): EscBuilder {
-        this.write(FS);
-        this.write("y");
-        this.write(logoNumber)
-        this.write(0)
+    writeLogo(kc1:number = 32,kc2:number = 32): EscBuilder {
+        this.write(GS);
+        this.write("(");
+        this.write('L')
+        this.write(0x06)
+        this.write(0x00)
+        this.write(0x30)
+        this.write(0x45)
+        this.write(kc1)
+        this.write(kc2)
+        this.write(1)
+        this.write(1)
         return this;
     }
 

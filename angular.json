@@ -36,10 +36,12 @@
                   "maximumWarning": "6kb"
                 }
               ],
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -141,9 +143,9 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-thermal-print/ng-package.prod.json"
-            ,              "tsConfig": "projects/ngx-thermal-print/tsconfig.lib.prod.json"
-}
+              "project": "projects/ngx-thermal-print/ng-package.prod.json",
+              "tsConfig": "projects/ngx-thermal-print/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -169,5 +171,8 @@
       }
     }
   },
-  "defaultProject": "print-lib"
+  "defaultProject": "print-lib",
+  "cli": {
+    "analytics": false
+  }
 }
