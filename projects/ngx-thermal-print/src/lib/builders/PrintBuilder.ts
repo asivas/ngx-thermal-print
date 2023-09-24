@@ -20,6 +20,7 @@ export abstract class PrintBuilder {
      */
     public abstract setSize(value: string);
     public abstract setUnderline(value: boolean);
+    public abstract setDouble(double: boolean );
     public abstract writeLine(text: string);
 
     public abstract writeLogo(kc1: number,kc2: number);

@@ -113,6 +113,15 @@ export class PrintService extends PrintBuilder {
   }
 
   /**
+   * Set double strike on off
+   * @param double
+   */
+  setDouble(double: boolean = true): PrintService {
+    this.builder.setDouble(double);
+    return this;
+  }
+
+  /**
    *
    * @param text
    */
@@ -131,5 +140,13 @@ export class PrintService extends PrintBuilder {
    */
   flush() {
     this.driver.write(this.builder.flush());
+  }
+
+  /**
+   * writes an external esc/pos encoded Uint8Array to the driver and clear out the builder
+   * @param encoded
+   */
+  flushEncoded(encoded: Uint8Array) {
+    this.driver.write(encoded);
   }
 }

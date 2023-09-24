@@ -113,6 +113,17 @@ export class EscBuilder extends PrintBuilder {
         return this;
     }
 
+  /**
+   * Set double-strike mode on/off
+   * @param double
+   */
+  setDouble(double: boolean = true): EscBuilder {
+      this.write(ESC);
+      this.write("G");
+      this.write(double?1:0);
+      return this
+    }
+
     private write(value: string | Uint8Array | number): any {
         if (typeof value === "number") {
             this.buffer.writeUInt8(value);
