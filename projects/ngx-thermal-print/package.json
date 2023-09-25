@@ -1,6 +1,6 @@
 {
-  "name": "ngx-thermal-print",
-  "version": "1.0.3",
+  "name": "@asivas/ngx-thermal-print",
+  "version": "1.0.4",
   "description": "An angular module to add thermal printing capabilities.",
   "keywords": [
     "Angular",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lucchetto/ngx-thermal-print"
+    "url": "https://github.com/asivas/ngx-thermal-print"
   },
   "peerDependencies": {
     "@angular/common": ">=8.0.0",
