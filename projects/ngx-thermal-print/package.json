@@ -16,6 +16,9 @@
     "@angular/common": ">=8.0.0",
     "@angular/core": ">=8.0.0"
   },
+  "publishConfig": {
+    "@asivas:registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "tslib": "^2.0.0"
   }
