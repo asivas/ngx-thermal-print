@@ -13,21 +13,27 @@ A library for connecting Angular apps with thermal printers.
 
 1. ESC/POS
 
-2. StarPRNT
-
-3. Star WebPRNT
-
 ## Installation
 
 Install library
 
-`npm install ngx-thermal-print`
+`npm install @asivas/ngx-thermal-print`
+
+    NOTE: 
+    
+ if when compiling project you get an error like this:
+
+  `ERROR in node_modules/ngx-thermal-print/lib/drivers/UsbDriver.d.ts:16:30 - error TS2304: Cannot find name 'USBDevice'. requestUsb(): Observable;`
+
+then add reference to w3c-web-usb by installing it with command: 
+
+`npm install @types/w3c-web-usb --only=dev`
 
 Import into your application
-
+```ts
     import { BrowserModule } from '@angular/platform-browser';
     import { NgModule } from '@angular/core';
-    import { ThermalPrintModule } from 'ngx-thermal-print'; //add this line
+    import { ThermalPrintModule } from '@asivas/ngx-thermal-print'; //add this line
     import { AppComponent } from './app.component';
 
     @NgModule({
@@ -42,14 +48,14 @@ Import into your application
         bootstrap: [AppComponent]
     })
     export class AppModule { }
+```
 
 ## Example Usage
 
 app.component.ts
-
-    import { PrintService, UsbDriver, WebPrintDriver } from 'ngx-thermal-print';
+```ts
+    import { PrintService, UsbDriver } from '@asivas/ngx-thermal-print';
     import { Component } from '@angular/core';
-    import { PrintDriver } from 'ngx-thermal-print/lib/drivers/PrintDriver';
 
     @Component({
         selector: 'app-root',
@@ -58,8 +64,7 @@ app.component.ts
     })
     export class AppComponent {
         status: boolean = false;
-        usbPrintDriver: UsbDriver;
-        webPrintDriver: WebPrintDriver;
+        usbPrintDriver: UsbDriver;        
         ip: string = '';
 
         constructor(private printService: PrintService) {
@@ -79,12 +84,7 @@ app.component.ts
                 this.printService.setDriver(this.usbPrintDriver, 'ESC/POS');
             });
         }
-
-        connectToWebPrint() {
-            this.webPrintDriver = new WebPrintDriver(this.ip);
-            this.printService.setDriver(this.webPrintDriver, 'WebPRNT');
-        }
-
+        
         print(driver: PrintDriver) {
             this.printService.init()
                 .setBold(true)
@@ -95,14 +95,11 @@ app.component.ts
                 .flush();
         }
     }
+```
 
 app.component.html
-
-    <strong>Status: {{status}}</strong>
-    <div>
-        <input [(ngModel)]="ip" type="text" name="ip" placeholder="IP of printer with WebPRNT">
-        <button (click)="connectToWebPrint()">Connect to WebPRNT</button>
-    </div>
+```angular2html
+    <strong>Status: {{status}}</strong>    
 
     <div>
         <button (click)="requestUsb()">Connect to USB</button>
@@ -111,3 +108,4 @@ app.component.html
     <div>
         <button (click)="print()" [disabled]="status === false"> Print!</button>
     </div>
+```

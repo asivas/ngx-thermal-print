@@ -103,8 +103,8 @@ export class EscBuilder extends PrintBuilder {
     }
 
     /**
-    @param mode 0, 0x30
-    */
+     * @param size
+     */
     setSize(size: string = 'normal'): EscBuilder {
         this.write(ESC);
         this.write("!");
