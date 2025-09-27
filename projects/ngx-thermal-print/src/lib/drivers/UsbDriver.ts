@@ -5,7 +5,7 @@
  * @Last Modified time: 2021-12-06 19:26:08
  */
 import { BehaviorSubject, Observable } from 'rxjs';
-import { PrintDriver } from "./PrintDriver";
+import { PrintDriver } from './PrintDriver';
 declare const navigator: any;
 
 export class UsbDriver extends PrintDriver {
@@ -74,7 +74,7 @@ export class UsbDriver extends PrintDriver {
 
     private listenForUsbConnections(): void {
         navigator.usb.addEventListener('disconnect', () => {
-            this.isConnected.next(false)
+            this.isConnected.next(false);
         });
         navigator.usb.addEventListener('connect', () => {
             this.isConnected.next(true);

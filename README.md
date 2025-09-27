@@ -8,6 +8,8 @@ A library for connecting Angular apps with thermal printers.
 1. WEBUSB API (No drivers needed. Only works with Chrome and Opera with USB connection)
 
 2. WebPRNT (http)
+ 
+3. Network (NetworkDriver) — TCP/IP network printing requires a backend (e.g., Node.js) that receives the printer's IP and port and sends the print data to the physical printer. The driver in the browser sends the bytes to the backend, which handles the actual printer communication
 
 ## Print Language Drivers
 
