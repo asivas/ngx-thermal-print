@@ -1,6 +1,6 @@
 {
   "name": "@asivas/ngx-thermal-print",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "An angular module to add thermal printing capabilities.",
   "keywords": [
     "Angular",
