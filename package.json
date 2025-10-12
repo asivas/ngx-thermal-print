@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build-lib": "ng build ngx-thermal-print --prod",
-    "test": "ng test",
+    "build:print-lib": "ng build",
+    "test:print-lib": "ng test",
+    "build": "ng build ngx-thermal-print --prod",
+    "test": "ng test ngx-thermal-print",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

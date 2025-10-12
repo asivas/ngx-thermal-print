@@ -6,7 +6,9 @@
  */
 import { UsbDriver } from './UsbDriver';
 import { BluetoothDriver } from './BluetoothDriver';
+import { NetworkDriver } from './NetworkDriver';
 export {
     UsbDriver,
     BluetoothDriver,
-}
+    NetworkDriver,
+};
